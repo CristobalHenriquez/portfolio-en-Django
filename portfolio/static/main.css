@@ -14,4 +14,27 @@ body{
 .card-body h2, .card-body p {
     color: #fff;
 }
+
+.profile__social{
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+  }
+
+  .profile__social-link{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    transition: .3s;
+  }
   
+  .profile__social-link:hover{
+    color: var(--first-color);
+  }
+
+  .footer__copy{ 
+    display: block; 
+    margin: 2.5rem 0 2rem; 
+    text-align: center; 
+    font-size: var(--smaller-font-size); 
+    color: white; 
+}
