@@ -1,16 +1,16 @@
-startCommand: gunicorn mysite.wsgi
+startCommand: gunicorn portfolio-en-Django.wsgi
 
 
 # render.yaml
 
-name: mysite
+name: portfolio-en-Django
 env:
   - key: PYTHON_VERSION
     value: "3.11.3"
   - key: SECRET_KEY
     value: "Vicente22@"
 
-startCommand: gunicorn mysite.wsgi
+startCommand: gunicorn portfolio-en-Django.wsgi
 
 routes:
   - path: /
