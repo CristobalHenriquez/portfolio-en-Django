@@ -14,9 +14,8 @@ startCommand: gunicorn django_portfolio.wsgi
 
 routes:
   - path: /
-    command: start
-  - path: /admin
-    command: python manage.py runserver
+    command: gunicorn django_portfolio.wsgi
+
 
 env:
   - key: DEBUG

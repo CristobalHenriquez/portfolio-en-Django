@@ -18,9 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-@8j_ki=@n8dtzr5jlcy4&mhx4hnc+47j1vg8$_pbib(chc6ax^'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cristobalhbdev.onrender.com']
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
