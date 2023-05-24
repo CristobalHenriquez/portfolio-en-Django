@@ -1,0 +1,27 @@
+startCommand: gunicorn mysite.wsgi
+
+
+# render.yaml
+
+name: mysite
+env:
+  - key: PYTHON_VERSION
+    value: "3.11.3"
+  - key: SECRET_KEY
+    value: "Vicente22@"
+
+startCommand: gunicorn mysite.wsgi
+
+routes:
+  - path: /
+    command: start
+  - path: /admin
+    command: python manage.py runserver
+
+env:
+  - key: DEBUG
+    value: "false"
+
+ports:
+  - port: 8000
+    protocol: http
