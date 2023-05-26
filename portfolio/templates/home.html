@@ -1,68 +1,80 @@
 {% extends 'layout.html'%} {% block content %} {% load static %}
 
 <header class="row bg-black">
-  <div class="col-md-4">
-    <img class="img-fluid" src="{% static 'portfolio/perfil.png'%}" alt="" />
+  <div class="row">
+    <div class="col-md-4">
+      <img class="img-fluid" src="{% static 'portfolio/perfil.png'%}" alt="" style="margin-bottom: 1rem; display: block; margin: auto;" />
+    </div>
+  
+    <div class="col-md-8 my-auto text-center">
+      <h1>Soy <strong>Cristobal Henriquez Bohmwald</strong></h1>
+      <h5>
+        DESARROLLADOR FULL-STACK, DESARROLLO DE SOFTWARE Y PERITO CLASIFICADOR DE
+        GRANOS
+      </h5>
+      <p>
+        Soy un Desarrollador Full-Stack con experiencia en Desarrollo Web,
+        conocimientos en agroindustria, atención al cliente y tareas
+        administrativas. También soy Técnico Superior en Desarrollo de Software
+        (cursando último año) y Perito Clasificador de Granos. Tengo un año de
+        experiencia en Desarrollo Web, con proyectos freelance en HTML, CSS,
+        JavaScript, React y PHP. Además, tengo experiencia en el uso de
+        herramientas de despliegue en hosting, como AWS y Firebase. Poseo
+        habilidades en atención al cliente y tareas administrativas y estoy
+        comprometido con el aprendizaje continuo en las últimas tendencias y
+        tecnologías del Desarrollo de Software. Me considero una persona
+        proactiva, responsable y comprometida con el trabajo en equipo.
+      </p>
+  
+      <ul class="profile__social" style="display: flex; justify-content: center; margin-bottom: 1rem;">
+        <a
+          href="https://www.instagram.com/henriquez6198/"
+          target="_blank"
+          class="profile__social-link"
+          style="margin-right: 1rem;"
+        >
+          <i class="ri-instagram-line"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/cristobalhenriquezbohmwald/"
+          target="_blank"
+          class="profile__social-link"
+          style="margin-right: 1rem;"
+        >
+          <i class="ri-linkedin-box-line"></i>
+        </a>
+        <a
+          href="https://github.com/CristobalHenriquez"
+          target="_blank"
+          class="profile__social-link"
+          style="margin-right: 1rem;"
+        >
+          <i class="ri-github-fill"></i>
+        </a>
+      </ul>
+  
+      <a
+        href="{% static 'portfolio/CristobalHenriquezBohmwald2023.pdf'%}"
+        class="btn btn-primary btn-lg rounded-o my-3"
+        target="_blank"
+      >
+        Descarga del CV
+      </a>
+    </div>
   </div>
-
-  <div class="col-md-8 my-auto text-center">
-    <h1>Soy <strong>Cristobal Henriquez Bohmwald</strong></h1>
-    <h5> DESARROLLADOR FULL-STACK, DESARROLLO DE
-      SOFTWARE Y PERITO CLASIFICADOR DE GRANOS</h5>
-    <p>
-      Soy un Desarrollador Full-Stack con experiencia en Desarrollo Web, conocimientos en
-      agroindustria, atención al cliente y tareas administrativas. También soy Técnico Superior
-      en Desarrollo de Software (cursando último año) y Perito Clasificador de Granos.
-      Tengo un año de experiencia en Desarrollo Web, con proyectos freelance en HTML, CSS,
-      JavaScript, React y PHP. Además, tengo experiencia en el uso de herramientas de
-      despliegue en hosting, como AWS y Firebase.
-      Poseo habilidades en atención al cliente y tareas administrativas y estoy comprometido
-      con el aprendizaje continuo en las últimas tendencias y tecnologías del Desarrollo de
-      Software. Me considero una persona proactiva, responsable y comprometida con el
-      trabajo en equipo.
-    </p>
-
-    <ul class="profile__social">
-      <a
-        href="https://www.instagram.com/henriquez6198/"
-        target="_blank"
-        class="profile__social-link"
-      >
-        <i class="ri-instagram-line"></i>
-      </a>
-      <a
-        href="https://www.linkedin.com/in/cristobalhenriquezbohmwald/"
-        target="_blank"
-        class="profile__social-link"
-      >
-        <i class="ri-linkedin-box-line"></i>
-      </a>
-      <a
-        href="https://github.com/CristobalHenriquez"
-        target="_blank"
-        class="profile__social-link"
-      >
-        <i class="ri-github-fill"></i>
-      </a>
-    </ul>
-
-    <a
-      href="{% static 'portfolio/CristobalHenriquezBohmwald2023.pdf'%}"
-      class="btn btn-primary btn-lg rounded-o my-3"
-      target="_blank"
-    >
-      Descarga del CV
-    </a>
-  </div>
+  
 </header>
 
 <div class="row my-4 text-center">
   <h2>Mis Proyectos</h2>
-  <p>En mis proyectos, encontrarás ejemplos de mis trabajos anteriores y cómo he aplicado mis habilidades técnicas y conocimientos 
-    en diferentes contextos. ¡Estoy emocionado de compartir contigo mis proyectos y demostrarte mi pasión por el desarrollo web y 
-    la entrega de soluciones de calidad!"</p>
+  <p>
+    En mis proyectos, encontrarás ejemplos de mis trabajos anteriores y cómo he
+    aplicado mis habilidades técnicas y conocimientos en diferentes contextos.
+    ¡Estoy emocionado de compartir contigo mis proyectos y demostrarte mi pasión
+    por el desarrollo web y la entrega de soluciones de calidad!"
+  </p>
   {% for project in projects %}
-  <div class="col-md-4 p-4">
+  <div class="col-lg-4 col-md-6 col-sm-12 p-4">
     <div class="card bg-black card-project">
       <img
         src="{{project.image.url}}"
@@ -75,68 +87,93 @@
         <p>{{project.description}}</p>
 
         {% if project.url %}
-        <a
-          href="{{project.url}}"
-          class="btn btn-light rounded-0 btn-sm"
-          target="_blank"
-          >{{project.url}}</a
-        >
+        <a href="{{project.url}}" class="btn btn-light custom-link" style="background-color: #1E90FF; 
+        color: #FFFFFF; font-size: 16px; padding: 5px 10px; width: 100%;" target="_blank">
+          {{project.url}}
+        </a>
+       
         {% endif %}
       </div>
     </div>
   </div>
-  {% endfor %} 
+  {% endfor %}
 </div>
- 
+
 <div class="soft-skills m-5">
   <div class="soft-skills">
-        <div class="soft-skill">
-            <h1>Habilidades</h1>
-            <p><strong>Desarrollo Web:</strong> Experiencia en el desarrollo web utilizando lenguajes como HTML, CSS y JavaScript. 
-              Capacidad para crear interfaces atractivas y funcionales, asegurando una experiencia de usuario óptima.
-            </p>
-            <p>
-              <strong>Stack Full-Stack:</strong> Conocimientos tanto en el frontend como en el backend del desarrollo web. 
-              Capacidad para crear y mantener aplicaciones completas, desde la interfaz de usuario hasta la lógica del servidor.
-            </p>
-            <p>
-              <strong>Tecnologías Web:</strong> Dominio de tecnologías como React, PHP y Python, lo que me permite crear aplicaciones 
-              web interactivas y escalables. Conocimientos en bibliotecas y frameworks populares para agilizar el desarrollo.
-            <p> 
-              <strong>Despliegue en Hosting:</strong> Experiencia en el uso de herramientas de despliegue en hosting, como AWS y Firebase. 
-              Capacidad para implementar y mantener aplicaciones web en entornos de producción de manera eficiente y segura.
-            </p>
-            <p>  
-              <strong>Metodologías Ágiles:</strong>  Amplia experiencia en el uso de metodologías ágiles, como Scrum o Kanban, para la gestión efectiva
-               de proyectos de desarrollo de software. Capacidad para aplicar principios ágiles, como la entrega incremental, la colaboración 
-               cercana con los stakeholders y la adaptación continua, para lograr una mayor eficiencia y satisfacción del cliente. Utilizo 
-               herramientas ágiles, como Jira o Trello, para la planificación, seguimiento y gestión visual de las tareas del proyecto. Además,
-                participo en reuniones regulares de retrospectiva y mejora continua para optimizar el proceso de desarrollo y garantizar la 
-                entrega exitosa de proyectos en tiempo y forma.
-            </p> 
-            <p>  
-              <strong>Agroindustria:</strong>  Conocimientos en el campo de la agroindustria, lo que me permite comprender las necesidades y
-               desafíos específicos de este sector. Capacidad para desarrollar soluciones tecnológicas adaptadas a las demandas 
-               de la industria.
-            </p> 
-            <p>
-              <strong>Atención al Cliente: </strong>  Habilidades en atención al cliente desarrolladas a través de experiencia previa. 
-              Capacidad para comprender las necesidades de los clientes, comunicarse eficazmente y brindar soluciones satisfactorias.
-            </p>
-        </div>
-        <div class="soft-skill">
-          <h2>Trabajo en equipo</h2>
-          <p>Enfoque colaborativo y capacidad para trabajar de manera efectiva en equipo. Habilidad para comunicarse,
-             colaborar y contribuir en un entorno de trabajo colaborativo.</p>
-      </div>
-        <div class="soft-skill">
-            <h2>Resolución de problemas</h2>
-            <p> Excelente capacidad para analizar y abordar problemas complejos de manera efectiva. Utilizo enfoques lógicos y creativos para
-               identificar las causas raíz de los desafíos y proponer soluciones viables. Además, poseo habilidades de pensamiento crítico y 
-               capacidad para tomar decisiones informadas, lo que me permite resolver problemas de manera eficiente y encontrar las mejores 
-               alternativas. Soy capaz de adaptarme rápidamente a situaciones cambiantes y de trabajar bajo presión para encontrar 
-               soluciones efectivas en el menor tiempo posible.</p>
-        </div>
+    <div class="soft-skill">
+      <h1>Habilidades</h1>
+      <p>
+        <strong>Desarrollo Web:</strong> Experiencia en el desarrollo web
+        utilizando lenguajes como HTML, CSS y JavaScript. Capacidad para crear
+        interfaces atractivas y funcionales, asegurando una experiencia de
+        usuario óptima.
+      </p>
+      <p>
+        <strong>Stack Full-Stack:</strong> Conocimientos tanto en el frontend
+        como en el backend del desarrollo web. Capacidad para crear y mantener
+        aplicaciones completas, desde la interfaz de usuario hasta la lógica del
+        servidor.
+      </p>
+      <p>
+        <strong>Tecnologías Web:</strong> Dominio de tecnologías como React, PHP
+        y Python, lo que me permite crear aplicaciones web interactivas y
+        escalables. Conocimientos en bibliotecas y frameworks populares para
+        agilizar el desarrollo.
+      </p>
+
+      <p>
+        <strong>Despliegue en Hosting:</strong> Experiencia en el uso de
+        herramientas de despliegue en hosting, como AWS y Firebase. Capacidad
+        para implementar y mantener aplicaciones web en entornos de producción
+        de manera eficiente y segura.
+      </p>
+      <p>
+        <strong>Metodologías Ágiles:</strong> Amplia experiencia en el uso de
+        metodologías ágiles, como Scrum o Kanban, para la gestión efectiva de
+        proyectos de desarrollo de software. Capacidad para aplicar principios
+        ágiles, como la entrega incremental, la colaboración cercana con los
+        stakeholders y la adaptación continua, para lograr una mayor eficiencia
+        y satisfacción del cliente. Utilizo herramientas ágiles, como Jira o
+        Trello, para la planificación, seguimiento y gestión visual de las
+        tareas del proyecto. Además, participo en reuniones regulares de
+        retrospectiva y mejora continua para optimizar el proceso de desarrollo
+        y garantizar la entrega exitosa de proyectos en tiempo y forma.
+      </p>
+      <p>
+        <strong>Agroindustria:</strong> Conocimientos en el campo de la
+        agroindustria, lo que me permite comprender las necesidades y desafíos
+        específicos de este sector. Capacidad para desarrollar soluciones
+        tecnológicas adaptadas a las demandas de la industria.
+      </p>
+      <p>
+        <strong>Atención al Cliente: </strong> Habilidades en atención al
+        cliente desarrolladas a través de experiencia previa. Capacidad para
+        comprender las necesidades de los clientes, comunicarse eficazmente y
+        brindar soluciones satisfactorias.
+      </p>
+    </div>
+    <div class="soft-skill">
+      <h2>Trabajo en equipo</h2>
+      <p>
+        Enfoque colaborativo y capacidad para trabajar de manera efectiva en
+        equipo. Habilidad para comunicarse, colaborar y contribuir en un entorno
+        de trabajo colaborativo.
+      </p>
+    </div>
+    <div class="soft-skill">
+      <h2>Resolución de problemas</h2>
+      <p>
+        Excelente capacidad para analizar y abordar problemas complejos de
+        manera efectiva. Utilizo enfoques lógicos y creativos para identificar
+        las causas raíz de los desafíos y proponer soluciones viables. Además,
+        poseo habilidades de pensamiento crítico y capacidad para tomar
+        decisiones informadas, lo que me permite resolver problemas de manera
+        eficiente y encontrar las mejores alternativas. Soy capaz de adaptarme
+        rápidamente a situaciones cambiantes y de trabajar bajo presión para
+        encontrar soluciones efectivas en el menor tiempo posible.
+      </p>
+    </div>
   </div>
-</div> 
+</div>
 {% endblock %}

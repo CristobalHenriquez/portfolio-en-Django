@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -18,9 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-@8j_ki=@n8dtzr5jlcy4&mhx4hnc+47j1vg8$_pbib(chc6ax^'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['cristobalhbdev.onrender.com']
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -94,11 +95,26 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Configuración de archivos estáticos
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Carpeta donde se recopilarán los archivos estáticos
 
-MEDIA_URL = '/public/'
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'portfolio', 'static'),
+]
+
+# Configuración de archivos de medios
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Carpeta donde se almacenarán los archivos de medios
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#STATIC_URL = '/static/'
+
+#MEDIA_ROOT = BASE_DIR / 'media'
+#
+#MEDIA_URL = '/public/'
+#
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

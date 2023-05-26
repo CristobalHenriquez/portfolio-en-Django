@@ -26,7 +26,7 @@ body{
     color: var(--title-color);
     transition: .3s;
   }
-  
+
   .profile__social-link:hover{
     color: var(--first-color);
   }
